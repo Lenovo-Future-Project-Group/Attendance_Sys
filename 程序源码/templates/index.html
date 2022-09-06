@@ -1,0 +1,504 @@
+<!-- /*
+* Author: weston 萝卜开发组
+*/ -->
+<!--suppress JSCheckFunctionSignatures, HtmlDeprecatedAttribute -->
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+    <meta name='author' content='Untree.co'>
+    <link rel='shortcut icon' href='../static/favicon.ico'>
+    <meta name='description' content='联想未来班考勤程序'/>
+    <meta name='keywords' content='westonZhang'/>
+    <link href='https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,900|Oswald:400,700' rel='stylesheet'>
+    <link rel='stylesheet' href='../static/fonts/icomoon/style.css'>
+    <link rel='stylesheet' href='../static/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='../static/css/magnific-popup.css'>
+    <link rel='stylesheet' href='../static/css/jquery-ui.css'>
+    <link rel='stylesheet' href='../static/css/owl.carousel.min.css'>
+    <link rel='stylesheet' href='../static/css/owl.theme.default.min.css'>
+    <link rel='stylesheet' href='../static/fonts/flaticon/font/flaticon.css'>
+    <link rel='stylesheet' href='../static/css/aos.css'>
+    <link rel='stylesheet' href='../static/css/fancybox.min.css'>
+    <link rel='stylesheet' href='../static/css/style.css'>
+    <script type='text/javascript' src='../static/js/kaoqin.js'></script>
+    <title>萝卜开发组 &mdash; 考勤程序 V2.0</title>
+
+    <script type='text/javascript'>
+        if (!!window.ActiveXObject || 'ActiveXObject' in window) {
+            alert('请抛弃万恶的IE浏览器吧！请更换浏览器访问本服务呢……');
+        }
+    </script>
+
+    <script>
+        document.addEventListener('visibilitychange', () => {
+            const state = document.visibilityState
+
+            if (state === 'hidden') {
+                document.title = '你切屏啦！'
+            } else {
+                document.title = '(●—●) 歡迎來种萝卜!!'
+            }
+        })
+    </script>
+
+    <script src='../static/js/jquery-3.4.1.js'></script>
+    <style>
+        .student-options-btn {
+            padding: 20px 0;
+        }
+    </style>
+    <script>
+        function submit() {
+            window.location.reload();
+        }
+
+        function submitForm() {
+            const get_or_post_form = document.getElementById('myfrom');
+            get_or_post_form.submit();
+        }
+
+        function submitInfo() {
+            document.getElementById('loginForm').submit();//js原生方式表单提交
+            $('#loginForm').submit();//或者jQuery方式,二选一，不过现在已经没啥项目不引入jQuery了吧。。。
+        }
+    </script>
+</head>
+<body data-spy='scroll' data-target='.site-navbar-target' data-offset='200'>
+
+<div class='site-wrap'>
+    {# 手机页面 #}
+    <div class='site-mobile-menu site-navbar-target'>
+        <div class='site-mobile-menu-header'>
+            <div class='site-mobile-menu-close mt-3'>
+                <span class='icon-close2 js-menu-toggle'></span>
+            </div>
+        </div>
+        <div class='site-mobile-menu-body'></div>
+    </div>
+
+    {# 主页菜单 #}
+    <header class='header-bar d-flex d-lg-block align-items-center site-navbar-target' data-aos='fade-right'>
+        <div class='site-logo'>
+            <a href='#'>功能目录</a>
+        </div>
+
+        <div class='d-inline-block d-lg-none ml-md-0 ml-auto py-3' style='position: relative; top: 3px;'>
+            <a href='#' class='site-menu-toggle js-menu-toggle '>
+                <span class='icon-menu h3'></span>
+            </a>
+        </div>
+
+        <div class='main-menu'>
+            <ul class='js-clone-nav'>
+                <li><a href='#section-home' class='nav-link'>主页</a></li>
+                <li><a href='#section-attendance' class='nav-link'>开始考勤</a></li>
+                <!--<li><a href='#section-analysis' class='nav-link'>考勤分析</a></li>-->
+                <li><a href='#section-settings' class='nav-link'>使用说明</a></li>
+                <li><a href='#section-description' class='nav-link'>功能配置</a></li>
+                <li><a href='#section-photos' class='nav-link'>班级风采</a></li>
+            </ul>
+            <ul class='social js-clone-nav'>
+                <li><a href='#'><span class='icon-instagram'></span></a></li>
+                <li><a href='#'><span class='icon-facebook'></span></a></li>
+                <li><a href='#'><span class='icon-twitter'></span></a></li>
+                <li><a href='#'><span class='icon-linkedin'></span></a></li>
+            </ul>
+        </div>
+    </header>
+
+    {# 主要内容 #}
+    <main class='main-content'>
+
+        <section class='site-section-hero bg-image mb-5' style='background-image: url("../static/images/hero-min.jpg");'
+                 data-stellar-background-ratio='0.5' id='section-home'>
+            <div class='row justify-content-center align-items-center'>
+                <div class='col-md-7 text-center'>
+                    <h1 class=' heading text-uppercase text-white' data-aos='fade-up'>考勤程序</h1>
+                    <p class='lead text-white mb-4' data-aos='fade-up' data-aos-delay='100'>欢迎您使用本程序. <a
+                            href='https://untree.co/'>考勤程序v2.0</a></p>
+                    <p data-aos='fade-up' data-aos-delay='100'>
+                        <a href='#section-attendance' class='btn btn-primary btn-md smoothscroll'>
+                            Have A Good Time
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class='container-fluid site-section'>
+            {# 开始考勤 #}
+            <section class='row align-items-stretch' id='section-attendance'>
+                <div class='container'>
+                    <div class='row'>
+                        <h1>考勤系统</h1>
+                    </div>
+                    <div class='row'>
+                        <div class='col-sm-8'></div>
+                        <div class='col-sm-4'>
+                            <div class='btn-group student-options-btn float-right' role='group'>
+                                <a type='button' class='btn btn-success' onclick='submit();'>刷新</a>
+                                <a type='button' class='btn btn-primary' onclick='submitInfo();'>提交</a>
+                                <!--<a type='button' class='btn btn-danger' href='#section-attendance'>调试</a>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <form action='/index/#section-attendance' method='get' id='myfrom'>
+                            <!-- 下拉框 -->
+                            <a><span style='width: 4cm; color: #bd081d; '>学科：</span></a>
+                            <label>
+                                <select onchange='submitForm();' name='course'>
+                                    {% for i in data['recous'] %}
+                                        {% if i == data['recour'] %}
+                                            <option name='course' value='{{ i }}' selected>{{ i }}</option>
+                                        {% else %}
+                                            <option name='course' value='{{ i }}'>{{ i }}</option>
+                                        {% endif %}
+                                    {% endfor %}
+                                </select>
+                            </label>
+                            <!-- 复选框 -->
+                            <a><span style='width: 4cm; color: #bd081d; '>请选择班级：</span></a>
+                            {% for cls in data['reclas'] %}
+                                <label>
+                                    <input type='checkbox' checked onclick='checkboxOnclick(this, "{{ cls }}")'>
+                                    {{ cls }}
+                                </label>
+                            {% endfor %}
+                            <!-- 下拉框 -->
+                            <a><span style='width: 4cm; color: #bd081d; '>课时：</span></a>
+                            <label>
+                                <select onchange='submitForm();' name='redate'>
+                                    <option name='date' value='{{ data['rsdate'] }}' selected#}
+                                            hidden>{{ data['rsdate'] }}</option>
+                                    {% for i in data['reiniy']['infor'][1].values() %}
+                                        {% if i == data['rsdate'] %}
+                                            <option name='date' value='{{ i }}' selected>{{ i }}</option>
+                                        {% else %}
+                                            <option name='date' value='{{ i }}'>{{ i }}</option>
+                                        {% endif %}
+                                    {% endfor %}
+                                </select>
+                            </label>
+                            <a type='button' class='btn btn-outline-primary' onclick='read_students()'>随机点名</a>
+                        </form>
+                    </div>
+                    <div class='row'>
+                        <form id='loginForm' action='/submit_kq_data/' method='post'>
+                            <label style='display: none'>
+                                <input name="date" value="{{ data['rsdate'] }}">
+                            </label>
+                            <label style='display: none'>
+                                <input name="cour" value="{{ data['recour'] }}">
+                            </label>
+                            <table class='table' id='tbody'>
+                                {#        头部标题#}
+                                <thead>
+                                <tr>
+                                    <th style='width: 4cm' align='center'>选择</th>
+                                    <th style='width: 4cm' align='center'>班级</th>
+                                    <th style='width: 4cm' align='center'>姓名</th>
+                                    <th style='width: 4cm' align='center'>考勤</th>
+                                    <th scope='col' class='text-center'></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr style='display: none'>
+                                    <td style='width: 4cm'>
+                                        <label for='check'></label>
+                                        <input type='checkbox' name='check' id='check' class='check'>
+                                    </td>
+                                    <td style='width: 4cm'>占位</td>
+                                    <td style='width: 4cm'>大傻</td>
+                                    <td style='width: 4cm' align='center'>
+                                        <label>
+                                            <select>
+                                                {#                                                                <option value='none' selected disabled hidden>考勤正常</option>#}
+                                                {% for k, v in data['reiniy']['error'][1].items() %}
+                                                    <option name=redata value='{{ v }}'>{{ v }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    {% if data['redata'] %}
+                                        {% for k, v in data['redata'].items() %}
+                                            {% for s in v %}
+                                                <td style='width: 4cm'>
+                                                    <label for='check'></label>
+                                                    <input type='checkbox' name='check' id='check' class='check'>
+                                                </td>
+                                                <td style='width: 4cm'>{{ k }}</td>
+                                                <td style='width: 4cm'>{{ s }}</td>
+                                                <td style='width: 4cm' align='center'>
+                                                    <label>
+                                                        <select name='user-{{ k }}-{{ s }}'>
+                                                            {#                                                                <option value='none' selected disabled hidden>考勤正常</option>#}
+                                                            {% for k, v in data['reiniy']['error'][1].items() %}
+                                                                <option name=redata value='{{ v }}'>{{ v }}</option>
+                                                            {% endfor %}
+                                                        </select>
+                                                    </label>
+                                                </td>
+                                                </tr>
+                                            {% endfor %}
+                                        {% else %}
+                                            <tr>
+                                                <td colspan='7'>当前没有任何内容</td>
+                                            </tr>
+                                        {% endfor %}
+                                    {% endif %}
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+            </section> <!-- #section-attendance -->
+
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+
+            {# 考勤分析 #}
+            <!--<section class='row align-items-stretch' id='section-analysis'>
+                <div class='col-12 text-center'>
+                    <h2 class='heading'>考勤分析</h2>
+                    <div class='container'>
+                        <table class='table table-striped table-hover'>
+                            <thead>
+                            <td>序号</td>
+                            <td>异常名单</td>
+                            <td>异常次数</td>
+                            <td>异常状态</td>
+                            <td>导出异常</td>
+                            </thead>
+                            <tbody>
+
+                            <tr>
+                                <td>1</td>
+                                <td>请选择班级</td>
+                                <td>null</td>
+                                <td>
+                                    <div class='word line1'>null</div>
+                                </td>
+                                <td>
+                                    <button class='show' line='line1'>选择</button>
+                                </td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>-->
+
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            {# 说明文档 #}
+            <section class="row align-items-stretch" id="section-settings">
+                {# 标题 #}
+                <div class="col-12 text-center">
+                    <h2 class="heading">使用说明</h2>
+                </div>
+
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            {% for i in data['reinix'] %}
+                                <p>{{ i }}</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            {# 配置文档 #}
+            <section class="site-section" id="section-description">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <div class='col-12 text-center'>
+                                <h2 class='heading'>配置信息</h2>
+                            </div>
+                            <span style='color: red'>下列配置都已默认配置好，若无必要可以不修改哦 ^_^</span>
+
+                            <form id='loginForm' action='/submit_kq_inis/' method='post'>
+                                {% for k, v in data['reiniy'].items() %}
+                                    {% if not k %}
+                                    {% elif 'error' in k %}
+                                        <div class="row form-group mb-5">
+                                            <div class="col-md-12">
+                                                <label class="" for="message">1. 所有考勤课时:</label>
+                                                <textarea name='{{ k }}' id="message" cols="30" rows="7"
+                                                          class="form-control">{{ data['reiniy']['error'][0] }}</textarea>
+                                            </div>
+                                        </div>
+
+                                    {% elif 'infor' in k %}
+                                        <div class="row form-group mb-5">
+                                            <div class="col-md-12">
+                                                <label class="" for="message">2. 所有考勤情形:</label>
+                                                <textarea name='{{ k }}' id="message" cols="30" rows="7"
+                                                          class="form-control">{{ data['reiniy']['infor'][0] }}</textarea>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+
+                                <div class='row form-group'>
+                                    <div class='col-md-12'>
+                                        <input type='submit' value='提交' class='btn btn-primary btn-md'>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+
+            {# 班级风采 #}
+            <section class='row align-items-stretch photos' id='section-photos'>
+                {# 标题：班级风采 #}
+                <div class='col-12 text-center'>
+                    <h2 class='heading'>班级风采</h2>
+                </div>
+
+                {# 介绍 #}
+                <div class='col-md-8'>
+                    <img src='../static/images/lenovo.png' alt='Image'
+                         class='img-fluid mb-4 w-50 rounded-circle'>
+                    <div data-aos='fade-up' data-aos-delay='100'>
+                        <h2 class=''>Hi 我们是联想未来班</h2>
+                        <p>
+                            我们是联想未来项目组,成立于2022年4月,现有16名成员,下方有具体介绍哦.
+                            我们班成员的有着各种兴趣爱好,可以说是无所不精了,绘画,摄影,音乐,烹饪,程序开发,甚至还有UP主
+                            相信通过时间的磨练我们都会成为未来的技术大牛！让我们拭目以待吧！ ^(*￣(oo)￣)^
+                        </p>
+                        <p><a href='#'>By 联想未来项目组 - 萝卜开发组</a></p>
+                        <h3 class=' mt-5'>Services</h3>
+
+                        <div class='d-block d-md-flex mt-5'>
+                            <div class='mr-md-auto mr-2'>
+                                <ul class='ul-check list-unstyled primary'>
+                                    <li>项目开发</li>
+                                </ul>
+                            </div>
+                            <div class='mr-md-auto'>
+                                <ul class='ul-check list-unstyled primary'>
+                                    <li>文件打印</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                {# 成员介绍 #}
+                <div class='container'>
+                    <div class='row justify-content-center'>
+                        <div class='col-md-8 text-center'>
+                            <div class='row justify-content-center'>
+                                <div class='col-md-12'>
+                                    <div class='owl-carousel slide-one-item home-slider'>
+
+                                        {% for name, img in data['images']['stu_images'].items() %}
+                                            <div class="testimony text-center px-md-4">
+                                                <figure class="mx-auto d-inline-block">
+                                                    <img src="../static/images/student_imgs/{{ img }}"
+                                                         class="mx-auto img-fluid w-25 rounded-circle" alt="">
+                                                </figure>
+                                                {# 介绍 #}
+                                                <p class="text-black"><strong>{{ name }}</strong></p>
+                                                <blockquote>
+                                                    <p>&ldquo;{{ data['images']['usa_iminfo'][name] }}&rdquo;</p>
+                                                </blockquote>
+                                            </div>
+                                        {% endfor %}
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {# 图片 #}
+                <div class='col-12'>
+                    <div class='row align-items-stretch'>
+
+                        {% for img in data['images']['cla_images'] %}
+                            <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+                                <a href="../static/images/cls_imgs/{{ img }}" class="d-block photo-item"
+                                   data-fancybox="gallery">
+                                    <img src="../static/images/cls_imgs/{{ img }}" alt="Image" class="img-fluid mb-0">
+                                    <div class="photo-text-more">
+                                        <span class="icon icon-eye"></span>
+                                    </div>
+                                </a>
+                            </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+
+            </section> <!-- #section-photos -->
+
+            {# 最下面的标签 #}
+            <div class='row justify-content-center'>
+                <div class='col-md-12 text-center py-5'>
+                    <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                        . Designed by <a href='#'>联想未来班</a> <!-- License information: https://untree.co/license/ -->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</div> <!-- .site-wrap -->
+
+<script src='../static/js/jquery-3.3.1.min.js'></script>
+<script src='../static/js/jquery-migrate-3.0.1.min.js'></script>
+<script src='../static/js/jquery.easing.1.3.js'></script>
+<script src='../static/js/jquery-ui.js'></script>
+<script src='../static/js/popper.min.js'></script>
+<script src='../static/js/bootstrap.min.js'></script>
+<script src='../static/js/owl.carousel.min.js'></script>
+<script src='../static/js/jquery.stellar.min.js'></script>
+<script src='../static/js/jquery.countdown.min.js'></script>
+<script src='../static/js/jquery.magnific-popup.min.js'></script>
+<script src='../static/js/aos.js'></script>
+<script src='../static/js/lozad.min.js'></script>
+
+
+<script src='../static/js/jquery.fancybox.min.js'></script>
+
+<script src='../static/js/main.js'></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+</body>
+</html>
