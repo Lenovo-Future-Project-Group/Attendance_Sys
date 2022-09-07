@@ -44,9 +44,8 @@ def os_home():
             'recour': excel.read_cou(cou)['cou'],  # 当前请求的课程
             'reclas': excel.read_cla(cou)['cla'],  # 当前请求的班级
             'rsdate': excel.read_red(red)['red'],  # 当前请求的课时
-            'Bar2_options': Bar_options.dump_options_with_quotes(),  # 柱状图
-            'Bar3_options': Bar_options.dump_options(),  #
-            'Cloud_options': Cloud_options,  # 词云图
+            'Bar_options': Bar_options.dump_options(),  #
+            'Cloud_options': Cloud_options.dump_options(),  # 词云图
 
         }
 
@@ -83,9 +82,8 @@ def os_index():
             'recour': excel.read_cou(cou)['cou'],  # 当前请求的课程
             'reclas': excel.read_cla(cou)['cla'],  # 当前请求的班级
             'rsdate': excel.read_red(red)['red'],  # 当前请求的课时
-            'Bar2_options': Bar_options.dump_options_with_quotes(),  # 柱状图
-            'Bar3_options': Bar_options.dump_options(),  #
-            'Cloud_options': Cloud_options,  # 词云图
+            'Bar_options': Bar_options.dump_options(),  #
+            'Cloud_options': Cloud_options.dump_options(),  # 词云图
 
         }
 
