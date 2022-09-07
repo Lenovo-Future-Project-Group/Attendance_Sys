@@ -1,19 +1,38 @@
 # pyecharts 的图 上传到html中
 
+from data import excel
 from random import randrange
 from pyecharts import options as opts
 from pyecharts.charts import Bar, WordCloud
 
 
-def base() -> Bar:
+# noinspection PyGlobalUndefined
+def cou_base() -> Bar:
+    cous = excel.read_cou()
     data = (
         Bar()
-        .add_xaxis(['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子'])
-        .add_yaxis('商家A', [randrange(0, 100) for _ in range(6)])
-        .add_yaxis('商家B', [randrange(0, 100) for _ in range(6)])
-        .set_global_opts(title_opts=opts.TitleOpts(title='Bar-基本示例', subtitle='我是副标题'))
+        .add_xaxis(['a', 'b', 'c', 'd', 'e', 'f'])
+        .add_yaxis(f'{cous["cou"][0]}', [randrange(0, 100) for _ in range(6)])
+        .add_yaxis(f'{cous["cou"][1]}', [randrange(0, 100) for _ in range(6)])
+        .set_global_opts(title_opts=opts.TitleOpts(title='学科考情分析', subtitle='我是副标题'))
     )
+
     return data
+
+
+if __name__ == '__main__':
+    cou_base()
+
+
+# def stu_base() -> Bar:
+#     data = (
+#         Bar()
+#         .add_xaxis(['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子'])
+#         .add_yaxis('商家A', [randrange(0, 100) for _ in range(6)])
+#         .add_yaxis('商家B', [randrange(0, 100) for _ in range(6)])
+#         .set_global_opts(title_opts=opts.TitleOpts(title='Bar-基本示例', subtitle='我是副标题'))
+#     )
+#     return data
 
 
 def wordcloudpic():
@@ -81,7 +100,7 @@ def wordcloudpic():
         .add(series_name="关键词分析", data_pair=data, word_size_range=[6, 66])
         .set_global_opts(
             title_opts=opts.TitleOpts(
-                title="关键词-热点分布", title_textstyle_opts=opts.TextStyleOpts(font_size=23)
+                title="考勤异常情况汇总", title_textstyle_opts=opts.TextStyleOpts(font_size=23)
             ),
             tooltip_opts=opts.TooltipOpts(is_show=True),
         )

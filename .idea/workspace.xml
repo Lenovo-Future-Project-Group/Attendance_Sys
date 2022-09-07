@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ebb4e4ad-514f-48eb-a5df-3ab4f86aca3c" name="变更" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/程序源码/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/程序源码/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/程序源码/data/rdata.py" beforeDir="false" afterPath="$PROJECT_DIR$/程序源码/data/rdata.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/程序源码/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/程序源码/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/程序源码/pyecarts/pyecharts_bar.py" beforeDir="false" afterPath="$PROJECT_DIR$/程序源码/pyecarts/pyecharts_bar.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,9 +95,32 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="pyecharts_bar" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="attendance" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/程序源码/pyecarts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/程序源码/pyecarts/pyecharts_bar.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.app" />
+        <item itemvalue="Python.pyecharts_bar" />
         <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
@@ -113,7 +138,7 @@
       <workItem from="1662455577480" duration="424000" />
       <workItem from="1662463100498" duration="1261000" />
       <workItem from="1662511873591" duration="1994000" />
-      <workItem from="1662517291777" duration="2544000" />
+      <workItem from="1662517291777" duration="5302000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1662440356907</created>
@@ -171,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662527887095</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1662527931895</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1662527931895</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,9 +235,15 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="i" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Lenovo_Future_Project_Group_C_Cay_Attendance_Procedure$app.coverage" NAME="app Coverage Results" MODIFIED="1662527893420" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Lenovo_Future_Project_Group_C_Cay_Attendance_Procedure$pyecharts_bar.coverage" NAME="pyecharts_bar Coverage Results" MODIFIED="1662530741806" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/程序源码/pyecarts" />
+    <SUITE FILE_PATH="coverage/Lenovo_Future_Project_Group_C_Cay_Attendance_Procedure$app.coverage" NAME="app Coverage Results" MODIFIED="1662531153937" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/attendance$app.coverage" NAME="app 覆盖结果" MODIFIED="1662440612568" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Lenovo_Future_Project_Group_C_Cay_Attendance_Procedure$main.coverage" NAME="main Coverage Results" MODIFIED="1662517637893" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/程序源码" />
   </component>

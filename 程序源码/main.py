@@ -30,7 +30,7 @@ def os_home():
     if not red:
         red = excel.read_red()['red'][0]  # 默认 系统
 
-    Bar_options = pyecharts_bar.base()
+    Bar_options = pyecharts_bar.cou_base()
 
     Cloud_options = pyecharts_bar.wordcloudpic()
 
@@ -68,7 +68,7 @@ def os_index():
     if not red:
         red = excel.read_red()['red'][0]
 
-    Bar_options = pyecharts_bar.base()
+    Bar_options = pyecharts_bar.cou_base()
 
     Cloud_options = pyecharts_bar.wordcloudpic()
 

@@ -75,7 +75,7 @@ def data_save(data, path):
     list_ws = list(work_save)
 
     def title():
-        title_info = f'{rdate.date()}{user_rdate.weekday()}-{data["date"]}'
+        title_info = f'{rdate.date()}{rdate.weekday()}-{data["date"]}'
         return title_info
 
     for row in list_ws:
