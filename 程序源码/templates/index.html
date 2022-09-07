@@ -43,6 +43,9 @@
     </script>
 
     <script src='../static/js/jquery-3.4.1.js'></script>
+    <script src="../static/js/echarts.min.js"></script>
+    <script type="text/javascript" src="../static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/js/echarts-wordcloud.js"></script>
     <style>
         .student-options-btn {
             padding: 20px 0;
@@ -63,6 +66,25 @@
             $('#loginForm').submit();//或者jQuery方式,二选一，不过现在已经没啥项目不引入jQuery了吧。。。
         }
     </script>
+
+    <script>
+
+        $(
+            function () {
+                const chart = echarts.init(document.getElementById('bar'), 'white', {renderer: 'canvas'});
+                $.ajax({
+                    type: 'GET',
+                    url: 'http://127.0.0.1:5000/home/',
+                    dataType: 'json',
+                    success: function (result) {
+                        chart.setOption(result);
+                    }
+                });
+            }
+        )
+    </script>
+
+
 </head>
 <body data-spy='scroll' data-target='.site-navbar-target' data-offset='200'>
 
@@ -269,7 +291,23 @@
                 <div class='col-12 text-center'>
                     <h2 class='heading'>考勤分析</h2>
                     <div class='container'>
-                        <table class='table table-striped table-hover'>
+
+                        <!-- 使用 pyecharts -->
+                        <script type="text/javascript">
+
+                            // 基于准备好的dom，初始化echarts实例
+                            const myChart2 = echarts.init(document.getElementById('bar2'));
+
+                            // 指定图表的配置项和数据  大括号 识别不了，，大括号 换行无法识别。。
+                            let echarts_bar = {{ data['Bar1_options'] | safe | safe }};
+
+                            // 使用刚指定的配置项和数据显示图表。
+                            myChart2.setOption(echarts_bar)
+
+
+                        </script>
+
+                        <!-- <table class='table table-striped table-hover'>
                             <thead>
                             <td>序号</td>
                             <td>异常名单</td>
@@ -292,7 +330,7 @@
                             </tr>
 
                             </tbody>
-                        </table>
+                        </table> -->
                     </div>
                 </div>
             </section>
@@ -494,10 +532,7 @@
 <script src='../static/js/jquery.magnific-popup.min.js'></script>
 <script src='../static/js/aos.js'></script>
 <script src='../static/js/lozad.min.js'></script>
-
-
 <script src='../static/js/jquery.fancybox.min.js'></script>
-
 <script src='../static/js/main.js'></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
