@@ -43,9 +43,9 @@
     </script>
 
     <script src='../static/js/jquery-3.4.1.js'></script>
-    <script src="../static/js/echarts.min.js"></script>
-    <script type="text/javascript" src="../static/js/jquery.min.js"></script>
-    <script type="text/javascript" src="../static/js/echarts-wordcloud.js"></script>
+    <script src='../static/js/echarts.min.js'></script>
+    <script type='text/javascript' src='../static/js/jquery.min.js'></script>
+    <script type='text/javascript' src='../static/js/echarts-wordcloud.js'></script>
     <style>
         .student-options-btn {
             padding: 20px 0;
@@ -65,23 +65,6 @@
             document.getElementById('loginForm').submit();//js原生方式表单提交
             $('#loginForm').submit();//或者jQuery方式,二选一，不过现在已经没啥项目不引入jQuery了吧。。。
         }
-    </script>
-
-    <script>
-
-        $(
-            function () {
-                const chart = echarts.init(document.getElementById('bar'), 'white', {renderer: 'canvas'});
-                $.ajax({
-                    type: 'GET',
-                    url: 'http://127.0.0.1:5000/home/',
-                    dataType: 'json',
-                    success: function (result) {
-                        chart.setOption(result);
-                    }
-                });
-            }
-        )
     </script>
 
 
@@ -209,10 +192,10 @@
                     <div class='row'>
                         <form id='loginForm' action='/submit_kq_data/' method='post'>
                             <label style='display: none'>
-                                <input name="date" value="{{ data['rsdate'] }}">
+                                <input name='date' value='{{ data['rsdate'] }}'>
                             </label>
                             <label style='display: none'>
-                                <input name="cour" value="{{ data['recour'] }}">
+                                <input name='cour' value='{{ data['recour'] }}'>
                             </label>
                             <table class='table' id='tbody'>
                                 {#        头部标题#}
@@ -291,21 +274,63 @@
                 <div class='col-12 text-center'>
                     <h2 class='heading'>考勤分析</h2>
                     <div class='container'>
+                        <script>
+                            $(
+                                function () {
+                                    const chart = echarts.init(document.getElementById('bar'), 'white', {renderer: 'canvas'});
+                                    $.ajax({
+                                        type: 'GET',
+                                        url: 'http://127.0.0.1:5000/',
+                                        dataType: 'json',
+                                        success: function (result) {
+                                            chart.setOption(result);
+                                        }
+                                    });
+                                }
+                            )
+                        </script>
+
 
                         <!-- 使用 pyecharts -->
-                        <script type="text/javascript">
+                        <script type='text/javascript'>
 
                             // 基于准备好的dom，初始化echarts实例
                             const myChart2 = echarts.init(document.getElementById('bar2'));
 
                             // 指定图表的配置项和数据  大括号 识别不了，，大括号 换行无法识别。。
-                            let echarts_bar = {{ data['Bar1_options'] | safe | safe }};
+                            let option2 = {{ data['Bar2_options'] | safe | safe }};
 
                             // 使用刚指定的配置项和数据显示图表。
-                            myChart2.setOption(echarts_bar)
+                            myChart2.setOption(option2);
+
+
+                            // 基于准备好的dom，初始化echarts实例
+                            const myChart3 = echarts.init(document.getElementById('bar3'));
+
+                            // 指定图表的配置项和数据
+                            let option3 = {{ data['Bar3_options'] | safe }};
+
+                            // 使用刚指定的配置项和数据显示图表。
+                            myChart3.setOption(option3);
 
 
                         </script>
+
+                        <!-- 使用 pyecharts 词云图-->
+                        <script type='text/javascript'>
+
+                            // 基于准备好的dom，初始化echarts实例
+                            const myChart_Cloud = echarts.init(document.getElementById('Cloud'));
+                            // 指定图表的配置项和数据
+
+                            let option_Cloud = {{ data['Cloud_options'] | safe }};
+
+                            // 使用刚指定的配置项和数据显示图表。
+                            myChart_Cloud.setOption(option_Cloud);
+
+                        </script>
+
+                        <!-- 使用 pyecharts -->
 
                         <!-- <table class='table table-striped table-hover'>
                             <thead>
@@ -342,15 +367,15 @@
             <br/>
             <br/>
             {# 说明文档 #}
-            <section class="row align-items-stretch" id="section-settings">
+            <section class='row align-items-stretch' id='section-settings'>
                 {# 标题 #}
-                <div class="col-12 text-center">
-                    <h2 class="heading">使用说明</h2>
+                <div class='col-12 text-center'>
+                    <h2 class='heading'>使用说明</h2>
                 </div>
 
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-md-8">
+                <div class='container'>
+                    <div class='row justify-content-center'>
+                        <div class='col-md-8'>
                             {% for i in data['reinix'] %}
                                 <p>{{ i }}</p>
                             {% endfor %}
@@ -367,10 +392,10 @@
             <br/>
             <br/>
             {# 配置文档 #}
-            <section class="site-section" id="section-description">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-md-8">
+            <section class='site-section' id='section-description'>
+                <div class='container'>
+                    <div class='row justify-content-center'>
+                        <div class='col-md-8'>
                             <div class='col-12 text-center'>
                                 <h2 class='heading'>配置信息</h2>
                             </div>
@@ -380,20 +405,20 @@
                                 {% for k, v in data['reiniy'].items() %}
                                     {% if not k %}
                                     {% elif 'error' in k %}
-                                        <div class="row form-group mb-5">
-                                            <div class="col-md-12">
-                                                <label class="" for="message">1. 所有考勤课时:</label>
-                                                <textarea name='{{ k }}' id="message" cols="30" rows="7"
-                                                          class="form-control">{{ data['reiniy']['error'][0] }}</textarea>
+                                        <div class='row form-group mb-5'>
+                                            <div class='col-md-12'>
+                                                <label class="" for='message'>1. 所有考勤课时:</label>
+                                                <textarea name='{{ k }}' id='message' cols='30' rows='7'
+                                                          class='form-control'>{{ data['reiniy']['error'][0] }}</textarea>
                                             </div>
                                         </div>
 
                                     {% elif 'infor' in k %}
-                                        <div class="row form-group mb-5">
-                                            <div class="col-md-12">
-                                                <label class="" for="message">2. 所有考勤情形:</label>
-                                                <textarea name='{{ k }}' id="message" cols="30" rows="7"
-                                                          class="form-control">{{ data['reiniy']['infor'][0] }}</textarea>
+                                        <div class='row form-group mb-5'>
+                                            <div class='col-md-12'>
+                                                <label class="" for='message'>2. 所有考勤情形:</label>
+                                                <textarea name='{{ k }}' id='message' cols='30' rows='7'
+                                                          class='form-control'>{{ data['reiniy']['infor'][0] }}</textarea>
                                             </div>
                                         </div>
                                     {% endif %}
@@ -465,13 +490,13 @@
                                     <div class='owl-carousel slide-one-item home-slider'>
 
                                         {% for name, img in data['images']['stu_images'].items() %}
-                                            <div class="testimony text-center px-md-4">
-                                                <figure class="mx-auto d-inline-block">
-                                                    <img src="../static/images/student_imgs/{{ img }}"
-                                                         class="mx-auto img-fluid w-25 rounded-circle" alt="">
+                                            <div class='testimony text-center px-md-4'>
+                                                <figure class='mx-auto d-inline-block'>
+                                                    <img src='../static/images/student_imgs/{{ img }}'
+                                                         class='mx-auto img-fluid w-25 rounded-circle' alt="">
                                                 </figure>
                                                 {# 介绍 #}
-                                                <p class="text-black"><strong>{{ name }}</strong></p>
+                                                <p class='text-black'><strong>{{ name }}</strong></p>
                                                 <blockquote>
                                                     <p>&ldquo;{{ data['images']['usa_iminfo'][name] }}&rdquo;</p>
                                                 </blockquote>
@@ -490,12 +515,12 @@
                     <div class='row align-items-stretch'>
 
                         {% for img in data['images']['cla_images'] %}
-                            <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
-                                <a href="../static/images/cls_imgs/{{ img }}" class="d-block photo-item"
-                                   data-fancybox="gallery">
-                                    <img src="../static/images/cls_imgs/{{ img }}" alt="Image" class="img-fluid mb-0">
-                                    <div class="photo-text-more">
-                                        <span class="icon icon-eye"></span>
+                            <div class='col-6 col-md-6 col-lg-4' data-aos='fade-up'>
+                                <a href='../static/images/cls_imgs/{{ img }}' class='d-block photo-item'
+                                   data-fancybox='gallery'>
+                                    <img src='../static/images/cls_imgs/{{ img }}' alt='Image' class='img-fluid mb-0'>
+                                    <div class='photo-text-more'>
+                                        <span class='icon icon-eye'></span>
                                     </div>
                                 </a>
                             </div>

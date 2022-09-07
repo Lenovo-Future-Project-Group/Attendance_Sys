@@ -30,6 +30,10 @@ def os_home():
     if not red:
         red = excel.read_red()['red'][0]  # 默认 系统
 
+    Bar_options = pyecharts_bar.base()
+
+    Cloud_options = pyecharts_bar.wordcloudpic()
+
     data = \
         {
             'reinix': illustrate.ini(),  # 说明文档
@@ -40,7 +44,10 @@ def os_home():
             'recour': excel.read_cou(cou)['cou'],  # 当前请求的课程
             'reclas': excel.read_cla(cou)['cla'],  # 当前请求的班级
             'rsdate': excel.read_red(red)['red'],  # 当前请求的课时
-            'Bar1_options': pyecharts_bar.get_bar_chart(),  # 柱状图
+            'Bar2_options': Bar_options.dump_options_with_quotes(),  # 柱状图
+            'Bar3_options': Bar_options.dump_options(),  #
+            'Cloud_options': Cloud_options,  # 词云图
+
         }
 
     # print(data)
@@ -48,6 +55,7 @@ def os_home():
 
 
 # todo 初始页面 需要完善
+
 
 @app.route('/index/')
 def os_index():
@@ -61,6 +69,10 @@ def os_index():
     if not red:
         red = excel.read_red()['red'][0]
 
+    Bar_options = pyecharts_bar.base()
+
+    Cloud_options = pyecharts_bar.wordcloudpic()
+
     data = \
         {
             'reinix': illustrate.ini(),  # 说明文档
@@ -71,7 +83,10 @@ def os_index():
             'recour': excel.read_cou(cou)['cou'],  # 当前请求的课程
             'reclas': excel.read_cla(cou)['cla'],  # 当前请求的班级
             'rsdate': excel.read_red(red)['red'],  # 当前请求的课时
-            'bar_base': pyecharts_bar.get_bar_chart(),  # 柱状图
+            'Bar2_options': Bar_options.dump_options_with_quotes(),  # 柱状图
+            'Bar3_options': Bar_options.dump_options(),  #
+            'Cloud_options': Cloud_options,  # 词云图
+
         }
 
     # print(data)
