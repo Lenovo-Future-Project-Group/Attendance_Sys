@@ -40,7 +40,7 @@ def os_home():
             'recour': excel.read_cou(cou)['cou'],  # 当前请求的课程
             'reclas': excel.read_cla(cou)['cla'],  # 当前请求的班级
             'rsdate': excel.read_red(red)['red'],  # 当前请求的课时
-            'bar_base': pyecharts_bar.get_bar_chart(),  # 柱状图
+            'Bar1_options': pyecharts_bar.get_bar_chart(),  # 柱状图
         }
 
     # print(data)
