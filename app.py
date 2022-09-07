@@ -1,3 +1,8 @@
+import os
+import sys
+from main import os_run
+from utils import configure
+
 """
 //
 // Copyright 2022 CPVS & Lenovo C-Cay Inc.
@@ -34,28 +39,6 @@
  *   earch -- None                                                                             *
  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 """
-
-"""
-/***********************************************************************************************
- * Import & form -- Import Run Function Library                                                *
- *                                                                                             *
- *                                                                                             *
- *                                                                                             *
- * INPUT:    Nothing                                                                           *
- *                                                                                             *
- * OUTPUT:   Nothing                                                                           *
- *                                                                                             *
- * WARNINGS: None                                                                              *
- *                                                                                             *
- * HISTORY:                                                                                    *
- *    30/06/22 2:37PM ST : Created                                                             *
- *=============================================================================================*/
- """
-
-import os
-import sys
-from main import os_run
-from utils import configure
 
 """
 /***********************************************************************************************
