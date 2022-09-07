@@ -279,8 +279,7 @@
                         <script type="text/javascript" src="/static/js/jquery.min.js"></script>
                         <script type="text/javascript" src="/static/js/echarts-wordcloud.js"></script>
 
-                        <div id="bar2" style="width:1000px; height:600px;"></div>
-                        <div id="bar3" style="width:1000px; height:600px;"></div>
+                        <div id="bar" style="width:1000px; height:600px;"></div>
                         <div id="Cloud" style="width:1000px; height:800px;"></div>
 
                         <script>
@@ -304,7 +303,7 @@
                         <script type='text/javascript'>
 
                             // 基于准备好的dom，初始化echarts实例
-                            const myChart3 = echarts.init(document.getElementById('bar3'));
+                            const myChart3 = echarts.init(document.getElementById('bar'));
 
                             // 指定图表的配置项和数据
                             let option = {{ data['Bar_options'] | safe }};
