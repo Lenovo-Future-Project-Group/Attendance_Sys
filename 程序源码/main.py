@@ -1,5 +1,6 @@
-from utils import user_configure, user_illustrate
-from data import user_rdata, user_excel, user_images
+from pyecarts import pyecharts_bar
+from data import rdata, excel, images
+from utils import configure, illustrate
 from flask import Flask, request, redirect, render_template, url_for
 
 app = Flask(__name__)
@@ -24,21 +25,22 @@ def os_home():
     red = request.args.get('redate')
 
     if not cou:
-        cou = user_excel.read_cou()['cou'][0]  # 默认 语文
+        cou = excel.read_cou()['cou'][0]  # 默认 语文
 
     if not red:
-        red = user_excel.read_red()['red'][0]  # 默认 系统
+        red = excel.read_red()['red'][0]  # 默认 系统
 
     data = \
         {
-            'reinix': user_illustrate.ini(),  # 说明文档
-            'reiniy': user_configure.ini(),  # 配置文档
-            'images': user_images.images(),  # 照片和个人简介
-            'redata': user_excel.exc()[cou],  # 班级和学生信息
-            'recous': user_excel.read_cou()['cou'],  # 所有课程
-            'recour': user_excel.read_cou(cou)['cou'],  # 当前请求的课程
-            'reclas': user_excel.read_cla(cou)['cla'],  # 当前请求的班级
-            'rsdate': user_excel.read_red(red)['red'],  # 当前请求的课时
+            'reinix': illustrate.ini(),  # 说明文档
+            'reiniy': configure.ini(),  # 配置文档
+            'images': images.images(),  # 照片和个人简介
+            'redata': excel.exc()[cou],  # 班级和学生信息
+            'recous': excel.read_cou()['cou'],  # 所有课程
+            'recour': excel.read_cou(cou)['cou'],  # 当前请求的课程
+            'reclas': excel.read_cla(cou)['cla'],  # 当前请求的班级
+            'rsdate': excel.read_red(red)['red'],  # 当前请求的课时
+            'bar_base': pyecharts_bar.get_bar_chart(),  # 柱状图
         }
 
     # print(data)
@@ -54,21 +56,22 @@ def os_index():
     red = request.args.get('redate')
 
     if not cou:
-        cou = user_excel.read_cou()['cou'][0]  # 默认 语文
+        cou = excel.read_cou()['cou'][0]  # 默认 语文
 
     if not red:
-        red = user_excel.read_red()['red'][0]
+        red = excel.read_red()['red'][0]
 
     data = \
         {
-            'reinix': user_illustrate.ini(),  # 说明文档
-            'reiniy': user_configure.ini(),  # 配置文档
-            'images': user_images.images(),  # 照片和个人简介
-            'redata': user_excel.exc()[cou],  # 班级和学生信息
-            'recous': user_excel.read_cou()['cou'],  # 所有课程
-            'recour': user_excel.read_cou(cou)['cou'],  # 当前请求的课程
-            'reclas': user_excel.read_cla(cou)['cla'],  # 当前请求的班级
-            'rsdate': user_excel.read_red(red)['red'],  # 当前请求的课时
+            'reinix': illustrate.ini(),  # 说明文档
+            'reiniy': configure.ini(),  # 配置文档
+            'images': images.images(),  # 照片和个人简介
+            'redata': excel.exc()[cou],  # 班级和学生信息
+            'recous': excel.read_cou()['cou'],  # 所有课程
+            'recour': excel.read_cou(cou)['cou'],  # 当前请求的课程
+            'reclas': excel.read_cla(cou)['cla'],  # 当前请求的班级
+            'rsdate': excel.read_red(red)['red'],  # 当前请求的课时
+            'bar_base': pyecharts_bar.get_bar_chart(),  # 柱状图
         }
 
     # print(data)
@@ -86,7 +89,7 @@ def os_get_read(cla):
             f'window.location.href = "/home/#section-attendance";' \
             f'</script>'
     else:
-        data = user_excel.read_stu(cla)
+        data = excel.read_stu(cla)
 
     return data
 
@@ -104,7 +107,7 @@ def os_get_name(stu):
             f'</script>'
 
     if request.method == 'GET':
-        name = user_excel.Named(stu)
+        name = excel.Named(stu)
         return name
     return redirect(url_for('os_index'))
 
@@ -123,7 +126,7 @@ def os_index_submit_data():
     if request.method == 'POST':
         data = request.form.to_dict()
         # 将数据保存到excel
-        user_rdata.data_save_info(data)
+        rdata.data_save_info(data)
         return \
             f'<script>' \
             f'alert("数据已保存到[考勤总表]。");' \
@@ -137,7 +140,7 @@ def os_index_submit_data():
 @app.route('/submit_kq_inis/', methods=['GET', 'POST'])
 def os_index_submit_inis():
     """ 接收提交的配置信息，并保存到配置文件中 """
-    old_data = user_configure.ini()  # 读取原配置，方便后面做对比
+    old_data = configure.ini()  # 读取原配置，方便后面做对比
     old_sett = \
         {
             'error': old_data['error'][0],
@@ -164,7 +167,7 @@ def os_index_submit_inis():
             # 如果是上课情形不同，则修改上课情形
             v = ''.join(('\n', v, '\n')).replace('\r', '')
             # 恢复UTF-8的数据格式并更新配置文件
-            user_configure.ini_save(old_sett[k], v)
+            configure.ini_save(old_sett[k], v)
     return redirect(url_for('os_index'))
 
 

@@ -38,11 +38,11 @@
       +--Lenovo c-cay attendance.py
       +--程序源码
             +--data
-                  +--user_excel.py
-                  +--user_images.py
-                  +--user_others.py
-                  +--user_rdata.py
-                  +--user_rdate.py
+                  +--excel.py
+                  +--images.py
+                  +--others.py
+                  +--rdata.py
+                  +--rdate.py
                   +--__init__.py
             +--main.py
             +--static
@@ -295,8 +295,8 @@
                   +--root.html
             +--utils
                   +--EnglishWordsTest.py
-                  +--user_configure.py
-                  +--user_illustrate.py
+                  +--configure.py
+                  +--illustrate.py
                   +--__init__.py
 ```
 

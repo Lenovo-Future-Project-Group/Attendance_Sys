@@ -5,7 +5,7 @@ import pandas as pd
 from openpyxl import load_workbook as wk
 from openpyxl.styles import Font as fuck
 
-from data import user_rdate
+from data import rdate
 
 
 # import user_rdate
@@ -75,7 +75,7 @@ def data_save(data, path):
     list_ws = list(work_save)
 
     def title():
-        title_info = f'{user_rdate.date()}{user_rdate.weekday()}-{data["date"]}'
+        title_info = f'{rdate.date()}{user_rdate.weekday()}-{data["date"]}'
         return title_info
 
     for row in list_ws:

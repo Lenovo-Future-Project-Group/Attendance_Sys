@@ -55,7 +55,7 @@
 import os
 import sys
 from main import os_run
-from utils import user_configure
+from utils import configure
 
 """
 /***********************************************************************************************
@@ -193,11 +193,11 @@ def search(sys_path, sys_name, model='current'):
 # noinspection PyBroadException
 def search_path():
     # # sys_path = os.path.abspath('.')[:3]
-    #     # 导入 user_configure.py 文件，然后从该文件调用 ini() 函数。
+    #     # 导入 configure.py 文件，然后从该文件调用 ini() 函数。
     #     ini_path = user_configure.ini()['usall']
     # sys_path = os.path.abspath('.')[:3]
-    # 导入 user_configure.py 文件，然后从该文件调用 ini() 函数。
-    ini_path = user_configure.ini()['usall']
+    # 导入 configure.py 文件，然后从该文件调用 ini() 函数。
+    ini_path = configure.ini()['usall']
 
     for i in ini_path:
         sys.path.append(os.path.abspath(f'{i}'))

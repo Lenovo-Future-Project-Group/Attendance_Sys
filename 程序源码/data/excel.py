@@ -2,8 +2,8 @@ import os
 import random
 import traceback
 import pandas as pd
-from data import user_rdate
-from utils import user_configure
+from data import rdate
+from utils import configure
 from openpyxl import load_workbook as wk
 
 
@@ -82,7 +82,7 @@ def read_cou(cou=None):
 
 def read_red(red=None):
     if not red:
-        data = {'red': [user_rdate.lesson(), '']}
+        data = {'red': [rdate.lesson(), '']}
         return data
     else:
         data = {'red': red}
@@ -119,7 +119,7 @@ def read_stu(stu):
 # 需要完善
 
 def read_stu_info():
-    restu = user_configure.ini()['restu'][1]
+    restu = configure.ini()['restu'][1]
     stu_info = []
     for k, v in restu.items():
         stu_info.append(v)
