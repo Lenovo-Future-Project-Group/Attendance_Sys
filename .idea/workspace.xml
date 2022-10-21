@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ebb4e4ad-514f-48eb-a5df-3ab4f86aca3c" name="变更" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <change beforePath="$PROJECT_DIR$/.idea/attendance.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/attendance.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/程序源码/data/rdata.py" beforeDir="false" afterPath="$PROJECT_DIR$/程序源码/data/rdata.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/程序源码/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/程序源码/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/程序源码/pyecarts/pyecharts_bar.py" beforeDir="false" afterPath="$PROJECT_DIR$/程序源码/pyecarts/pyecharts_bar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2-考勤结果/点名文档.txt" beforeDir="false" afterPath="$PROJECT_DIR$/2-考勤结果/点名文档.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/程序源码/static/students_introduction.json" beforeDir="false" afterPath="$PROJECT_DIR$/程序源码/static/students_introduction.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,6 +140,8 @@
       <workItem from="1662463100498" duration="1261000" />
       <workItem from="1662511873591" duration="1994000" />
       <workItem from="1662517291777" duration="5302000" />
+      <workItem from="1666378183183" duration="482000" />
+      <workItem from="1666379166968" duration="47000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1662440356907</created>
@@ -242,9 +245,10 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Lenovo_Future_Project_Group_C_Cay_Attendance_Procedure$pyecharts_bar.coverage" NAME="pyecharts_bar Coverage Results" MODIFIED="1662530741806" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/程序源码/pyecarts" />
     <SUITE FILE_PATH="coverage/Lenovo_Future_Project_Group_C_Cay_Attendance_Procedure$app.coverage" NAME="app Coverage Results" MODIFIED="1662531153937" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/attendance$app.coverage" NAME="app 覆盖结果" MODIFIED="1662440612568" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Attendance_Sys$app.coverage" NAME="app Coverage Results" MODIFIED="1666378236236" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Lenovo_Future_Project_Group_C_Cay_Attendance_Procedure$main.coverage" NAME="main Coverage Results" MODIFIED="1662517637893" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/程序源码" />
+    <SUITE FILE_PATH="coverage/Lenovo_Future_Project_Group_C_Cay_Attendance_Procedure$pyecharts_bar.coverage" NAME="pyecharts_bar Coverage Results" MODIFIED="1662530741806" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/程序源码/pyecarts" />
+    <SUITE FILE_PATH="coverage/attendance$app.coverage" NAME="app 覆盖结果" MODIFIED="1662440612568" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
