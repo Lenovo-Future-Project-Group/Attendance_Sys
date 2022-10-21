@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ebb4e4ad-514f-48eb-a5df-3ab4f86aca3c" name="变更" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <change beforePath="$PROJECT_DIR$/.idea/attendance.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/attendance.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-考勤结果/点名文档.txt" beforeDir="false" afterPath="$PROJECT_DIR$/2-考勤结果/点名文档.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/程序源码/static/students_introduction.json" beforeDir="false" afterPath="$PROJECT_DIR$/程序源码/static/students_introduction.json" afterDir="false" />
-    </list>
+    <list default="true" id="ebb4e4ad-514f-48eb-a5df-3ab4f86aca3c" name="变更" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -141,7 +135,7 @@
       <workItem from="1662511873591" duration="1994000" />
       <workItem from="1662517291777" duration="5302000" />
       <workItem from="1666378183183" duration="482000" />
-      <workItem from="1666379166968" duration="47000" />
+      <workItem from="1666379166968" duration="149000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1662440356907</created>
@@ -206,7 +200,21 @@
       <option name="project" value="LOCAL" />
       <updated>1662527931895</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1666379219360</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1666379219360</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1666379256765</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1666379256765</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
